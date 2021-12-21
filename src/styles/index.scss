@@ -1,0 +1,19 @@
+@import '../pages/variables.scss';
+
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @media (min-width: 992px) {
+        &.addScrollBar {
+            padding-right: 30px;
+        }
+    }
+}
+
+body {
+    font-family: "Montserrat";
+    background: var(#{--body-background-default});
+    transition: all .5s ease;
+}

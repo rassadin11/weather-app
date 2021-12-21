@@ -1,0 +1,76 @@
+@import '../../../variables.scss';
+
+.home {
+    font-size: 20px;
+}
+
+.temperature {
+    font-size: 96px;
+    color: $primary-color;
+    line-height: 80px;
+    margin: 0;
+    z-index: 2;
+}
+
+.timeStamp {
+    font-size: 40px;
+    line-height: 49px;
+    color: var(#{--text-color-default});
+    margin: 0;
+    z-index: 2;
+}
+
+.time {
+    font-size: 25px;
+    line-height: 30px;
+    color: $base-color;
+    margin: 30px 0 0;
+    z-index: 2;
+}
+
+.city {
+    font-size: 25px;
+    line-height: 30px;
+    color: $base-color;
+    margin: 14px 0 0;
+    z-index: 2;
+}
+
+.leftBar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+    flex: 0 0 32%;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    background: var(#{--components-background-default})
+}
+
+.icon {
+    position: absolute;
+    right: 5%;
+    z-index: 1;
+    animation-name: increaseSun;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    width: 119px;
+
+    @media (max-width: 500px) {
+        width: 80px;
+    }
+}
+
+@keyframes increaseSun {
+    from {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}

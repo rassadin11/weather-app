@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
+import './styles/index.scss';
+import Home from './pages/Home/components/Home/Home';
+import Header from './components/Header/Header';
+import { useSelector } from 'react-redux';
 import './App.css';
 
 function App() {
+  const { isLoading } = useSelector(state => state.currentWeather)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={isLoading ? `container addScrollBar` : `container`}>
+      <Header />
+      <div>
+        <Home />
+      </div>
     </div>
   );
 }

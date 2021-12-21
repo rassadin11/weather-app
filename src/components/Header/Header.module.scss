@@ -1,0 +1,42 @@
+@import '../../pages/variables.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 550px) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 20px;
+    }
+}
+
+.change__theme {
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+
+    & > *:first-child {
+        margin-right: 15px;
+    }
+
+    &:last-child {
+        justify-content: flex-end;
+        width: 100%
+    }
+}
+
+.title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: $primary-color;
+}
