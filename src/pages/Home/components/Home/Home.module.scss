@@ -18,6 +18,10 @@
     text-align: center;
     color: #fff;
     font-size: 25px;
+
+    &.white {
+        color: #000
+    }
 }
 
 .weatherWrapper {

@@ -17,3 +17,24 @@ body {
     background: var(#{--body-background-default});
     transition: all .5s ease;
 }
+
+.sunshine {
+    animation: sunshine 30s linear infinite;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@keyframes sunshine {
+    0% {
+        box-shadow: 0 0 200px 100px #fcff46;
+    }
+
+    50% {
+        box-shadow: 0 0 200px 200px #fcff46;
+    }
+
+    100% {
+        box-shadow: 0 0 200px 100px #fcff46;
+    }
+}

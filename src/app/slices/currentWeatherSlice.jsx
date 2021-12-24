@@ -8,7 +8,8 @@ const initialState = {
     select: [
         { value: 'Saint-Petersburg', label: 'Saint-Petersburg' },
         { value: 'Moskow', label: 'Moskow' },
-        { value: 'Rostov-on-Done', label: 'Rostov-on-Done' }
+        { value: 'Rostov-on-Done', label: 'Rostov-on-Done' },
+        { value: 'Abu-Dhabi', label: 'Abu-Dhabi' }
     ]
 }
 

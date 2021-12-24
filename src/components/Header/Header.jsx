@@ -7,6 +7,7 @@ import { storage } from '../../model/Storage'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCurrentWeather } from "../../app/thunks/fetchCurrentWeather";
 import { setCity } from "../../app/slices/currentWeatherSlice";
+import { changeActiveWeather } from "../../app/slices/currentWeekday";
 
 const Header = (props) => {
   let [theme, setTheme] = React.useState(storage.getItem('theme')) || true
@@ -49,6 +50,19 @@ const Header = (props) => {
 
   const handleCity = (town) => {
     if (city !== town) {
+      dispatch(changeActiveWeather({
+        weekday: '',
+        city: '',
+        iconId: '',
+        sunrise: '',
+        sunset: '',
+        temp: 0,
+        feelsLike: 0,
+        pressure: 0,
+        precip: 0,
+        windspeed: 0,
+        winddir: 0
+      }))
       dispatch(fetchCurrentWeather(town.value))
       dispatch(setCity(town.value))
     }
