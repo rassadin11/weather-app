@@ -1,31 +1,29 @@
-let nbDrop = 200;
+import React from 'react'
+import RainItem from './Item'
 
 function computePosition(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-export function createRain() {
-    let array = []
-    let positions = []
+const CreateRain = () => {
+  const [nbDrop, _] = React.useState(200)
 
-    for (let i = 0; i < Math.floor(nbDrop / 2); i++) {
-        let dropLeft = computePosition(0, document.body.clientWidth);
-        let dropTop = computePosition(-1000, 1400);
+  let positions = []
 
-        positions.push([dropLeft, dropTop])
+  for (let i = 0; i < Math.floor(nbDrop); i++) {
+    let dropLeft = computePosition(0, document.body.clientWidth)
+    let dropTop = computePosition(0, window.innerHeight)
 
-        array.push(<div key={i} className="drop" id={`drop${i}`} style={{
-            left: dropLeft + 'px',
-            top: dropTop + "px"
-        }}></div>)
-    }
+    positions.push([dropLeft, dropTop - window.innerHeight - 89, i])
+  }
 
-    for (let i = 0; i < Math.floor(nbDrop / 2); i++) {
-        array.push(<div key={`${i + Math.floor(nbDrop / 2)} `} className="drop" id={`drop${i}`} style={{
-            left: positions[i][0] + 'px',
-            top: positions[i][1] - 1000 + "px"
-        }}></div>)
-    }
-
-    return array
+  return (
+    <>
+      {positions.map(pos => (
+        <RainItem dropLeft={pos[0]} dropTop={pos[1]} i={pos[2]} />
+      ))}
+    </>
+  )
 }
+
+export default CreateRain

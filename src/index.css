@@ -27,26 +27,16 @@ body::-webkit-scrollbar-thumb {
 }
 
 .drop {
-  background: #c3c3c3!important;
+  background: #c3c3c3 !important;
   width: 1px;
-	height: 89px;
-	position: absolute;
-	bottom: 200px;
-  animation: fall 0.63s linear infinite;
+  height: 89px;
+  position: absolute;
+  bottom: 200px;
+  transition: all 5s ease;
 }
 
 .snow {
   position: fixed;
   width: 99vw;
   height: 99vh;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(0)
-  }
-
-  100% {
-    transform: translateY(1000px)
-  }
 }
